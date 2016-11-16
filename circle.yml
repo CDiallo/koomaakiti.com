@@ -1,0 +1,14 @@
+machine:
+  php:
+    version: 7.0.4
+
+
+test:
+  override:
+    - echo "test"
+    
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: local-koomaakiti-com
