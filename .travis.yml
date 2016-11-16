@@ -1,0 +1,27 @@
+language: php
+php:
+    - 5.4
+    - 5.6
+    - 7.0
+
+services:
+  - mysql
+  
+script: phpunit -v --debug
+
+matrix:
+    allow_failures:
+        - php: 5.4
+        - php: 5.6
+        - php: 7.0
+  
+notifications:
+  email:
+    - developers@koomaakiti.com
+    
+deploy:
+  provider: heroku
+  api_key:
+    secure: "51e225b3-3350-49e9-8f28-46d2e10bf60f"
+  appname: local-koomaakiti-com  
+  
